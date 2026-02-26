@@ -1,51 +1,51 @@
 function validateForm() {
-    let username =
-    document.getElementById("username").Value;
-    
-    let password =
-    document.getElementById("password").Value;
 
-    let confirmpassword =
-    document.getElementById("confirmpassword").Value;
+    let username = document.getElementById("username").value.trim();
+    let password = document.getElementById("password").value.trim();
+    let confirmpassword = document.getElementById("confirmpassword").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let firstName = document.getElementById("firstName").value.trim();
+    let lastName = document.getElementById("lastName").value.trim();
+    let terms = document.getElementById("terms").checked;
+    let error = document.getElementById("errorMsg");
 
-    let email =
-    document.getElementById("email").Value;
+    error.style.color = "red";
 
-    let firstName =
-    document.getElementById("firstName").Value;
+    // 1️⃣ Empty fields check
+    if (username === "" || password === "" || confirmpassword === "" ||
+        email === "" || firstName === "" || lastName === "") {
 
-    let lastName =
-    document.getElementById("lastName").Value;
-
-    let terms =
-    document.getElementById("terms").Value;
-
-    let error =
-    document.getElementById("errorMsg").Value;
-
-    if(
-        username === "" ||
-        password === "" || confirmpassword === "" ||
-
-        email === "" || firstName === "" || lastName === ""
-    ) {
         error.innerText = "All fields are required!";
-        return;
+        return false;
     }
 
-    if (password !==
-    confirmpassword) {
-        error.innerText =
-        "Passwords do not Match!";
-        return;
+    // 2️⃣ Password match check
+    if (password !== confirmpassword) {
+        error.innerText = "Passwords do not match!";
+        return false;
     }
 
+    // 3️⃣ Password length check
+    if (password.length < 6) {
+        error.innerText = "Password must be at least 6 characters!";
+        return false;
+    }
+
+    // 4️⃣ Email format check
+    let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,}$/;
+    if (!email.match(emailPattern)) {
+        error.innerText = "Enter a valid email address!";
+        return false;
+    }
+
+    // 5️⃣ Terms checkbox check
     if (!terms) {
-        error.innerText = "Please accept Terms of Service!";
-        return;
+        error.innerText = "Please accept the Terms of Service!";
+        return false;
     }
 
+    // ✅ Success
     error.style.color = "green";
     error.innerText = "Signup Successful!";
+    return true;
 }
-
