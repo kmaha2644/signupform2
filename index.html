@@ -13,23 +13,24 @@
         <img src="Logo.jpg" alt="logo" class="logo">
   </div>  
   <div class="signup-body">
-     <form id="signupForm" action="form.php">
+     <form id="signupForm" action="form.php" method="POST">
         <label>Username:</label>
-        <input type="text" id="username">
+    <input type="text" id="username" name="username">
 
         <label>Password:</label>
-        <input type="password" id="password">
+    <input type="password" id="password" name="password">
+
         <label>Confirm Password:</label>
-        <input type="password" id="confirmpassword">
+    <input type="password" id="confirmpassword">
 
         <label>Email Address:</label>
-         <input type="email" id="email">
+    <input type="email" id="email" name="email">
 
          <label>First Name:</label>
-         <input type="text" id="firstName">
+    <input type="text" id="firstName" name="firstName">
      
         <label>Last Name:</label>
-         <input type="text" id="lastName">
+    <input type="text" id="lastName" name="lastName">
 
          <div class="terms">
             <input type="checkbox" id="terms">
@@ -37,12 +38,9 @@
          </div>
 
          <div class="error" id="errorMsg"></div>
-     </form>
-  </div>
 
-  <div class="signup-footer">
-      <button
-      onclick="validateForm()">Signup</button>
+         <button type="submit">Signup</button>
+     </form>
   </div>
   </div>
 
