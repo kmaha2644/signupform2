@@ -4,16 +4,19 @@ body {
 }
 
 .signup-box {
-    width: 420px;
+    width: 400px;
     margin: 50px auto;
     background: #ffffff;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    border: 1px solid #ccc;
 }
 
 .header {
-    background: #cfe6f5;
+    background: linear-gradient(to bottom #cedee9 #97bbd4);
     padding: 10px;
+    color: #4a6a8a;
     text-align: center;
     font-size: 20px;
     font-weight: bold;
@@ -28,7 +31,11 @@ body {
 }
 
 .signup-body {
-    padding: 20px;
+    padding: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
 }
 
 .signup-body label {
@@ -70,6 +77,7 @@ button {
     color: white;
     font-size: 16px;
     border: 4px;
+    margin-right: 30px;
     cursor: pointer;
 }
 
